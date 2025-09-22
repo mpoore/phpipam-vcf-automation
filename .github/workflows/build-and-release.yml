@@ -5,6 +5,9 @@ on:
     types:
       - published  # Runs when a release is created or published
 
+permissions:
+  contents: write  # <-- Required to upload release assets
+
 jobs:
   build:
     runs-on: ubuntu-latest
