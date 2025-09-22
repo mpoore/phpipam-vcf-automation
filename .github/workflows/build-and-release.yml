@@ -47,8 +47,12 @@ jobs:
       # Step 7: Extract version from pom.xml
       - name: Extract provider version
         run: |
-          VERSION=$(xmllint --xpath "string(//project/properties/provider.version)" pom.xml)
+          VERSION=$(xmllint --xpath "string(//*[local-name()='project']/*[local-name()='properties']/*[local-name()='provider.version'])" pom.xml)
           echo "Provider version detected: $VERSION"
+          if [ -z "$VERSION" ]; then
+            echo "ERROR: Could not extract provider.version from pom.xml" >&2
+            exit 1
+          fi
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       # Step 8: Build project using Maven

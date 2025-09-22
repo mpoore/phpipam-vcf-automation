@@ -331,7 +331,7 @@ conditions of the subcomponent's license, as noted in the LICENSE file.
                         </goals>
                         <configuration>
                             <descriptor>src/assembly/zip-provider.xml</descriptor>
-                            <finalName>${provider.name}v${provider.version}</finalName>
+                            <finalName>${provider.name}-${provider.version}</finalName>
                         </configuration>
                     </execution>
                 </executions>
