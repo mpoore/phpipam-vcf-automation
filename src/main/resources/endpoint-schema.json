@@ -1,0 +1,270 @@
+{
+    "layout": {
+        "pages": [
+            {
+                "id": "phpIPAM",
+                "title": "phpIPAM endpoint",
+                "sections": [
+                    {
+                        "id": "Connection",
+                        "fields": [
+                            {
+                                "id": "hostName",
+                                "display": "textField"
+                            },
+                            {
+                                "id": "privateKeyId",
+                                "display": "textField"
+                            },
+                            {
+                                "id": "privateKey",
+                                "display": "passwordField"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Filter",
+                        "fields": [
+                            {
+                                "id": "enableFilter",
+                                "display": "checkbox"
+                            },
+                            {
+                                "id": "filterField",
+                                "display": "textField",
+                                "state": {
+                                    "visible": [
+                                        {
+                                            "equals": {
+                                                "enableFilter": true
+                                            },
+                                            "value": true
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "filterValue",
+                                "display": "textField",
+                                "state": {
+                                    "visible": [
+                                        {
+                                            "equals": {
+                                                "enableFilter": true
+                                            },
+                                            "value": true
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "filterMatch",
+                                "display": "dropDown",
+                                "state": {
+                                    "visible": [
+                                        {
+                                            "equals": {
+                                                "enableFilter": true
+                                            },
+                                            "value": true
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "On Demand Networks",
+                        "fields": [
+                            {
+                                "id": "enableOnDemand",
+                                "display": "checkbox"
+                            },
+                            {
+                                "id": "onDemandField",
+                                "display": "textField",
+                                "state": {
+                                    "visible": [
+                                        {
+                                            "equals": {
+                                                "enableOnDemand": true
+                                            },
+                                            "value": true
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Custom Fields",
+                        "fields": [
+                            {
+                                "id": "dnsDomain",
+                                "display": "textField",
+                                "state": {
+                                    "visible": true
+                                }
+                            },
+                            {
+                                "id": "dnsSearchDomains",
+                                "display": "textField",
+                                "state": {
+                                    "visible": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "schema": {
+        "privateKeyId": {
+            "type": {
+                "dataType": "string"
+            },
+            "label": "phpIPAM API App ID",
+            "signpost": "phpIPAM requires configuration to enable API access. An 'App id' must be generated.",
+            "constraints": {
+                "required": true
+            }
+        },
+        "privateKey": {
+            "label": "phpIPAM API App Code",
+            "type": {
+                "dataType": "secureString"
+            },
+            "signpost": "phpIPAM requires configuration to enable API access. An 'App code' corresponding to the App ID must be generated.",
+            "constraints": {
+                "required": true
+            }
+        },
+        "hostName": {
+            "type": {
+                "dataType": "string"
+            },
+            "label": "phpIPAM Hostname",
+            "signpost": "Enter the FQDN (recommended) or IP address of the phpIPAM instance. If a non-standard port is used (i.e. not 443) then that can be added also.",
+            "constraints": {
+                "required": true
+            }
+        },
+        "enableFilter": {
+            "type": {
+                "dataType": "boolean"
+            },
+            "label": "Enable subnet filter?",
+            "signpost": "If enabled, only subnets matching a designated filter will be returned. This feature can be used to limit the discovery scope of subnets that can be used with this integration.",
+            "default": false
+        },
+        "filterField": {
+            "type": {
+                "dataType": "string"
+            },
+            "label": "Filter Field",
+            "signpost": "This defines the field within phpIPAM that will be used to filter subnets.",
+            "constraints": {
+                "required": [
+                    {
+                        "equals": {
+                            "enableFilter": true
+                        },
+                        "value": true
+                    }
+                ]
+            },
+            "default": "isPool"
+        },
+        "filterValue": {
+            "type": {
+                "dataType": "string"
+            },
+            "label": "Filter Value",
+            "signpost": "This defines the value for the filter field above that matches a subnet. The value '1' can be used to match filters fields where the value is 'true'.",
+            "constraints": {
+                "required": [
+                    {
+                        "equals": {
+                            "enableFilter": true
+                        },
+                        "value": true
+                    }
+                ]
+            },
+            "default": "1"
+        },
+        "filterMatch": {
+            "type": {
+                "dataType": "string"
+            },
+            "label": "Filter Match",
+            "signpost": "This governs the filter behaviour. FULL will look for an exact match to the filter value. PARTIAL will match results that contain the filter value as part of the whole value. REGEX treats the filter value as a regular expression.",
+            "constraints": {
+                "required": false
+            },
+            "valueList":[
+                {
+                "label":"FULL",
+                "value":"full"
+                },
+                {
+                "label":"PARTIAL",
+                "value":"partial"
+                },
+                {
+                "label":"REGEX",
+                "value":"regex"
+                }
+            ],
+            "default": ""
+        },
+        "dnsDomain": {
+            "type": {
+                "dataType": "string"
+            },
+            "label": "DNS Domain custom field name",
+            "signpost": "(Optional) If the DNS domain for subnets has been added as a custom field in phpIPAM, enter the name of the field here.",
+            "constraints": {
+                "required": false
+            }
+        },
+        "dnsSearchDomains": {
+            "type": {
+                "dataType": "string"
+            },
+            "label": "DNS Search Domains custom field name",
+            "signpost": "(Optional) If the DNS search domains for subnets have been added as a custom field in phpIPAM, enter the name of the field here.",
+            "constraints": {
+                "required": false
+            }
+        },
+        "enableOnDemand": {
+            "type": {
+                "dataType": "boolean"
+            },
+            "label": "Enable on-demand networks?",
+            "signpost": "If enabled, the On-Demand Field below should contain the name of a custom boolean field in phpIPAM that can be used to denote if a subnet should be treated as an IP block for the creation of subordinate subnest or not.",
+            "default": false
+        },
+        "onDemandField": {
+            "type": {
+                "dataType": "string"
+            },
+            "label": "On-Demand custom field name",
+            "signpost": "This defines the boolean field within phpIPAM that will be used to indicate if a subnet should be used as an IP block.",
+            "constraints": {
+                "required": [
+                    {
+                        "equals": {
+                            "enableOnDemand": true
+                        },
+                        "value": true
+                    }
+                ]
+            },
+            "default": "onDemand"
+        }
+    },
+    "options": {}
+}

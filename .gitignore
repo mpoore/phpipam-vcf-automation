@@ -1,0 +1,91 @@
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Logs
+*.log
+
+# Unit test / coverage
+.coverage
+.tox/
+.nox/
+.pytest_cache/
+htmlcov/
+*.cover
+*.coverage.*
+.cache
+
+# -------------------------
+# Maven
+# -------------------------
+target/
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Maven local settings (optional, if you keep custom settings per dev)
+.settings/
+
+# -------------------------
+# Docker
+# -------------------------
+# Ignore Docker build artifacts (optional)
+*.tar
+docker-compose.override.yml
+
+# -------------------------
+# IDE / Editor Files
+# -------------------------
+# VS Code
+.vscode/
+.history/
+
+# IntelliJ / Eclipse / JetBrains
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+
+# -------------------------
+# OS / System Files
+# -------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------
+# GitHub Actions
+# -------------------------
+# Local action logs
+.github/workflows/*.log
+
+# -------------------------
+# Miscellaneous
+# -------------------------
+*.bak
+*.tmp
+~$*
+test/
