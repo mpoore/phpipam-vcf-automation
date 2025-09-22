@@ -1,9 +1,6 @@
 name: Build and Release
 
 on:
-  push:
-    branches:
-      - main
   release:
     types:
       - published  # Runs when a release is created or published
@@ -16,6 +13,9 @@ jobs:
       # Step 1: Checkout the repository
       - name: Checkout source
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.release.tag_name }}
 
       # Step 2: Install xmllint (libxml2-utils)
       - name: Install xmllint
