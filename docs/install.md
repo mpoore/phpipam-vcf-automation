@@ -22,7 +22,7 @@ The integration zipfile downloaded above does *not* need to be unzipped. It is u
 
 ![Select the IPAM integration](img/install_addintegration_ipam.png)
 
-5. On the New *Integration* page, click the **MANAGE IPAM PROVIDERS** button.
+5. On the *New Integration* page, click the **MANAGE IPAM PROVIDERS** button.
 
 ![Click the button to MANAGE IPAM PROVIDERS](img/install_addintegration_manage.png)
 

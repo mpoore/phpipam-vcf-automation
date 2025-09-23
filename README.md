@@ -18,7 +18,7 @@ phpIPAM is lightweight, easy to deploy, and integrates well with network automat
 - [phpIPAM REST API documentation](https://phpipam.net/api/api_documentation/)
 
 ## Documentation
-Documentation for this integration and its use in conjunction with VCF Automation and phpIPAM is available in the [docs](docs) folder. The documentation is not intended to provide detailed guidance for either VCF Automation or phpIPAM beyond the scope of this integration.
+Documentation for this integration and its use in conjunction with VCF Automation and phpIPAM is available in the docs folder. The documentation is not intended to provide detailed guidance for either VCF Automation or phpIPAM beyond the scope of this integration.
 
 The following documentation pages are available:
 - [Installation](docs/install.md) - How to download and install this integration.
