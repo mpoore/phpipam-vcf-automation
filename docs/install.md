@@ -11,7 +11,9 @@ The latest version of this integration can be downloaded from the [Releases](htt
 The integration zipfile downloaded above does *not* need to be unzipped. It is uploaded directly into VCF Automation as follows:
 
 1. Login to VCF Automation as a user with administrative privileges to the Assembler component.
+
 2. Navigate to **Infrastructure** > **Integrations**.
+
 3. Click the button to **ADD INTEGRATION**.
 
 ![Click the button to ADD INTEGRATION](img/install_addintegration.png)
@@ -27,11 +29,11 @@ The integration zipfile downloaded above does *not* need to be unzipped. It is u
 6. In the window for managing IPAM providers, click the **IMPORT PROVIDER PACKAGE** button.
 
 ![Click the button to IMPORT PROVIDER PACKAGE](img/install_addintegration_import1.png)
-
 (Note: the title of the window looks like it's subject to a bug in 8.18.1)
 
-7. Select the phpIPAM-x.x.x.zip file that was downloaded.
-8. Once the package is uploaded and extracted, a success message will be displayed. The window can now be closed using the CLOSE button.
+7. Select the *phpIPAM-x.x.x.zip* file that was downloaded.
+
+8. Once the package is uploaded and extracted, a success message will be displayed. The window can now be closed using the **CLOSE** button.
 
 ![The package is successfully installed](img/install_addintegration_import2.png)
 
@@ -42,5 +44,7 @@ That's all that is required to install the IPAM provider package into VCF Automa
 To upgrade the integration, the process is almost identical to the original installation:
 
 1. Navigate to the IPAM providers management window via any existing of new integration.
+
 2. Upload the updated package in the same way that the original was installed (see above).
+
 3. When uploading another version of the same provider, a prompt will be displayed asking if the existing version (e.g. 0.1.0) should be replaced with a newer version (e.g. 0.1.1). Proceeding will overwrite the existing provider version for all configured integrations of that type. 
