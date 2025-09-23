@@ -6,6 +6,8 @@ These subnets can be associated with infrastructure networks in *Network Profile
 
 By default, the integration will collect data about all defined subnets in phpIPAM that have the IP requests option enabled. The example subnet below has this option turned on and will be available for use to allocate IP addresses from.
 
+Note: Filter configuration affects both subnets collected for virtual machine provisioning *and* subnets collected for on-demand networks.
+
 ![An example phpIPAM subnet with 'IP requests' enabled](img/phpipam_example_subnet.png)
 
 If there are a large number of subnets managed by phpIPAM, or there are a limited number of subnets that should be exposed to VCF Automation, then a filter can be set to restrict which subnets are discovered.

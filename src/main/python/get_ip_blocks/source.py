@@ -43,10 +43,10 @@ def handler(context, inputs):
 
 def do_get_ip_blocks(self, auth_credentials, cert):
     # Configure IP block functionality
-    enableIPBlocks = self.inputs["endpoint"]["endpointProperties"]["enableIPBlocks"]
-    isBlockField = self.inputs["endpoint"]["endpointProperties"]["isBlockField"]
+    enableIPBlocks = self.inputs["endpoint"]["endpointProperties"]["enableOnDemand"]
+    isBlockField = self.inputs["endpoint"]["endpointProperties"]["onDemandField"]
     if enableIPBlocks != "true":
-      logging.info("IP blocks functionality is disabled in endpoint configuration")
+      logging.info("on-demand networks functionality is disabled in endpoint configuration")
       result = {
         "ipBlocks" : []
       }

@@ -30,7 +30,7 @@ Select the **phpIPAM** integration from the list of available providers.
 
 7. Enter the FQDN of the phpIPAM instance, the App ID, and App Code into the relevant fields.
 
-![The minimum configuration for the provider](img/configure_provider_min.png.png)
+![The minimum configuration for the provider](img/configure_provider_min.png)
 
 8. Click the **VALIDATE** button to check the connection from VCF Automation to the phpIPAM instance.
 
